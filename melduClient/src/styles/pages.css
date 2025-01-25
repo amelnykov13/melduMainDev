@@ -1,0 +1,70 @@
+.loginFrame {
+    width: 50%;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    left: 27%;
+    top: 12%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.loginOperationFrame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8vh
+}
+
+.loginInputFields {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.operationButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    justify-content: center;
+}
+
+
+.registerFrame {
+    width: 50%;
+    height: 70%;
+    border-radius: 10px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    left: 27%;
+    top: 12%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.registerOperationFrame {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vh
+}
+
+.registerInputFields {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    justify-content: center;
+    align-items: center;
+}

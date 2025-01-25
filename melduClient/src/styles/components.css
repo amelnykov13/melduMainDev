@@ -1,0 +1,105 @@
+.dockpadFrame {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 5.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5vw;
+    border-radius: 0px 25px 25px 0px;
+    z-index: 999;
+}
+
+.logoHolder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5vh 0;
+}
+
+.commandButtonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 3.5vh;
+}
+
+.cmdButtonFrame {
+    height: 6vh;
+    width: 3vw;
+}
+
+.miniUpperDockFrame {
+    position: fixed;
+    top: 0;
+    width: 73.5%;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1vh;
+    padding-left: 2vw;
+    border-bottom: 1px solid #000;
+    margin-left: 5%;
+    z-index: 998;
+    background-color: white;
+}
+
+.upperDockButtons {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    gap: 1vw;
+}
+
+.searchBarUpperDock {
+    display: flex;
+    justify-content: end;
+    flex-grow: 1;
+    padding-right: 3.5vw;
+}
+
+.schedulingDockFrame {
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    height: 100%;
+    width: 21%;
+    z-index: 999;
+}
+
+
+.mainContent {
+    margin-left: 8%; /* Match the width of the left dock */
+    margin-right: 21%; /* Match the width of the right dock */
+    padding-top: 10vh; /* Add space for the top dock (e.g., 10vh) */
+}
+
+.infoBlockFrame {
+    flex: 1;
+    width: 24vw;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.infoBlockInfoFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.50);
+}
