@@ -80,7 +80,7 @@
 .mainContent {
     margin-left: 8%; /* Match the width of the left dock */
     margin-right: 21%; /* Match the width of the right dock */
-    padding-top: 10vh; /* Add space for the top dock (e.g., 10vh) */
+    padding-top: 5vh; /* Add space for the top dock (e.g., 10vh) */
 }
 
 .infoBlockFrame {
@@ -102,4 +102,19 @@
     width: 90%;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.50);
+}
+
+.typeHolder {
+    border-radius: 50%;
+    border: 1px solid #000;
+    width: 15vw;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.typeHolder img {
+    width: 15vw;
+    height: 25vh;
+    border-radius: 50%;
 }

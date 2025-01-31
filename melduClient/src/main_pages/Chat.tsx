@@ -1,45 +1,42 @@
+import { FormControl, Input, InputAdornment, IconButton, Visually } from "@mui/material";
 import { useParams } from "react-router-dom"
-import DockPad from "../components/DockPad";
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ImageIcon from '@mui/icons-material/Image';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+
 export default function Chat() {
     let param = useParams();
-    let { type } = param;
-    let backColor = type === 's' ? "#6BEBCB" : "#0E587F";
     
     
     
     return (
         <>
-            <DockPad color={backColor}/>
 
-            <div>
-                <input type="search"/>
-                <div>
+            <div className="chatPage">
+                <div className="chatContent">
+
                 </div>
-            </div>
-
-            <div>
-                {/* Calendar */}
-            </div>
-
-            <div>
-                {/* <div>
-                    <img src={activeAcc1.profPic}/>
-                    <p>{activeAcc1.fullName}</p>
-                    <p>{activeAcc1.type}</p>
-                    <p>{activeAcc1.time}</p>
-                    <p>{activeAcc1.duration}</p>
-                </div>
-                <div>
-                    <img src={activeAcc2.profPic}/>
-                    <p>{activeAcc2.fullName}</p>
-                    <p>{activeAcc2.type}</p>
-                    <p>{activeAcc2.time}</p>
-                    <p>{activeAcc2.duration}</p>
-                </div> */}
-            </div>
-
-            <div>
-                
+                <FormControl className="chatInputBox">
+                    <Input sx={{ width: '40vw', borderRadius: '15px', border: '1px solid #000'}} disableUnderline
+                    startAdornment= {
+                        <InputAdornment position="start">
+                            <IconButton>
+                                <CalendarMonthIcon/>
+                            </IconButton>
+                        </InputAdornment>
+                    } endAdornment= {
+                        <InputAdornment position="end">
+                            <IconButton>
+                                <AttachFileIcon/>
+                            </IconButton>
+                            <IconButton>
+                                <ImageIcon/>
+                            </IconButton>
+                        </InputAdornment>
+                    }>
+                    
+                    </Input>
+                </FormControl>
             </div>
         
         </>

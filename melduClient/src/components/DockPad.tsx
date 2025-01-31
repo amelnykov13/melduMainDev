@@ -8,12 +8,15 @@ import PersonIcon from '@mui/icons-material/Person';
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import { Badge } from '@mui/material';
 import '../styles/components.css'
+import { Link } from 'react-router-dom';
 
 interface DockPadProps {
     color: string;
+    disabledBtn?: any;
+    mode: 's' | 't';
 }
 
-export default function DockPad({ color }: DockPadProps) {
+export default function DockPad({ color, disabledBtn, mode }: DockPadProps) {
     let dockStyle = {
         backgroundColor: color
     } 
@@ -25,27 +28,40 @@ export default function DockPad({ color }: DockPadProps) {
             </div>
 
             <div className='commandButtonContainer'>
-                <CommandButton icon={<HomeIcon style={{fontSize: '4vh'}}/>} />
+                <Link to={mode === 's' ? '/s/home' : '/t/home'}>
+                    <CommandButton disabled={disabledBtn === "home"} icon={<HomeIcon style={{fontSize: '4vh'}}/>} />
+                </Link>
                 
-                <CommandButton icon=
-                    {
-                        <Badge badgeContent={3} color='secondary'>
-                            <NotificationsIcon style={{fontSize: '4vh'}}/>
-                        </Badge>
-                    }
-                />
+                <Link to={mode === 's' ? '/s/notifications' : '/t/notifications'}>
+                    <CommandButton disabled={disabledBtn === 'notifications'} icon=
+                        {
+                            <Badge badgeContent={3} color='secondary'>
+                                <NotificationsIcon style={{fontSize: '4vh'}}/>
+                            </Badge>
+                        }
+                    />
+                </Link>
                 
-                <CommandButton icon=
-                    {
-                        <Badge badgeContent={2} color='secondary'>
-                            <ChatBubbleIcon style={{fontSize: '3.5vh'}}/>
-                        </Badge>
-                    } 
-                />
+                <Link to={mode === 's' ? '/s/chat' : '/t/chat'}>
+                    <CommandButton disabled={disabledBtn === 'chat'} icon=
+                        {
+                            <Badge badgeContent={2} color='secondary'>
+                                <ChatBubbleIcon style={{fontSize: '3.5vh'}}/>
+                            </Badge>
+                        } 
+                    />
+                </Link>
                 
-                <CommandButton icon={<SchoolIcon style={{fontSize: '4vh'}}/>} />
-                <CommandButton icon={<PersonIcon style={{fontSize: '4vh'}}/>} />
-                <CommandButton icon={<SyncAltIcon style={{fontSize: '4vh'}}/>} />       
+                <Link to={mode === 's' ? '/s/education' : '/t/education'}>
+                    <CommandButton disabled={disabledBtn === 'education'} icon={<SchoolIcon style={{fontSize: '4vh'}}/>} />
+                </Link>
+
+                <Link to={mode === 's' ? '/s/myprofile' : '/t/myprofile'}>
+                    <CommandButton disabled={disabledBtn === 'myprofile'} icon={<PersonIcon style={{fontSize: '4vh'}}/>} />
+                </Link>
+                <Link to="/">
+                    <CommandButton disabled={disabledBtn === 'switch'} icon={<SyncAltIcon style={{fontSize: '4vh'}}/>} />       
+                </Link>
             </div>
 
         </div>

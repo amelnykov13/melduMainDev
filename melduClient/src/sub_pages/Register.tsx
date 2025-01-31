@@ -1,44 +1,79 @@
 import InfoBlock from "../components/InfoBlock"
-import { TextField } from "@mui/material"
+import { TextField, FormControl } from "@mui/material"
 import Button from '@mui/material/Button'
 import '../styles/pages.css'
+import { Link } from "react-router-dom"
 export default function Register() {
     return (
         <>
             <div className="registerFrame">
                 <div className="registerOperationFrame">
-                    <h3>Create Account</h3>
-                    <div className="registerInputFields">
-                        <TextField required  size="small" type="username" sx={{
-                                width: '18vw',
-                                backgroundColor: '#FAF9F6'
-                            }}/>
-                        <TextField required hiddenLabel  size="small" type="password" sx={{
-                            width: '18vw',
-                            backgroundColor: '#FAF9F6'
-                        }}/>
-                        <TextField required  size="small" type="username" sx={{
-                                width: '18vw',
-                                backgroundColor: '#FAF9F6'
-                            }}/>
-                        <TextField required hiddenLabel  size="small" type="password" sx={{
-                            width: '18vw',
-                            backgroundColor: '#FAF9F6'
-                        }}/>
-                        <TextField required  size="small" type="username" sx={{
-                                width: '18vw',
-                                backgroundColor: '#FAF9F6'
-                            }}/>
-                        <TextField required hiddenLabel  size="small" type="password" sx={{
-                            width: '18vw',
-                            backgroundColor: '#FAF9F6'
-                        }}/>
-                    </div>
+                    <h3 style={{marginLeft: "4vw", fontFamily: 'Inter', fontStyle: 'normal', fontSize: '1.6rem'}}>Create Account</h3>
 
-                    <div className="operationButtons">
-                        <Button variant="contained" color="success">Create Accoung</Button>
-                        <Button variant="outlined" style={{backgroundColor: '#fff', color: 'black'}}>Log in</Button>
-                    </div>
+
+                    <FormControl className="registerInputFields">
+
+                            <TextField required  size="small" type="username" sx={{
+                                    width: '18vw',
+                                    backgroundColor: '#FAF9F6',
+                                    borderRadius: '20px',
+                                    "& .MuiOutlinedInput-root": {
+                                        borderRadius: "20px", // Adjust this value as needed
+                                    }
+                                }}/>
+                            <TextField required hiddenLabel  size="small" type="text" sx={{
+                                width: '18vw',
+                                backgroundColor: '#FAF9F6',
+                                borderRadius: '20px',
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "20px", // Adjust this value as needed
+                                }
+                            }}/>
+                            <TextField required  size="small" type="email" sx={{
+                                    width: '18vw',
+                                    backgroundColor: '#FAF9F6',
+                                    borderRadius: '20px',
+                                    "& .MuiOutlinedInput-root": {
+                                        borderRadius: "20px", // Adjust this value as needed
+                                    }
+                                }}/>
+                            <TextField required hiddenLabel  size="small" type="text" sx={{
+                                width: '18vw',
+                                backgroundColor: '#FAF9F6',
+                                borderRadius: '20px',
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "20px", // Adjust this value as needed
+                                }
+                            }}/>
+                            <TextField required  size="small" type="password" sx={{
+                                    width: '18vw',
+                                    backgroundColor: '#FAF9F6',
+                                    borderRadius: '20px',
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "20px", // Adjust this value as needed
+                                }
+                                }}/>
+                            <TextField required hiddenLabel  size="small" type="password" sx={{
+                                width: '18vw',
+                                backgroundColor: '#FAF9F6',
+                                borderRadius: '20px',
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "20px", // Adjust this value as needed
+                                }
+                            }}/>
+
+                            <div className="operationButtons">
+                                <Button type="submit" variant="contained" color="success" 
+                                sx={{
+                                    width: '18vw',
+                                }}>Create Account</Button>
+                                
+                                <Link to="/login">
+                                    <Button variant="outlined" style={{backgroundColor: '#fff', color: 'black', width: '18vw'}}>Log in</Button>
+                                </Link>
+                            
+                            </div>
+                    </FormControl>
 
 
                     

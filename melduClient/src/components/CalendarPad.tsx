@@ -1,31 +1,62 @@
-import React, { useState } from 'react';
-import { StaticDateTimePicker } from '@mui/x-date-pickers/StaticDateTimePicker';
+import { useState } from 'react';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'; // You can also use other adapters like date-fns or moment
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
+import { StaticDatePicker } from '@mui/x-date-pickers';
 import '../styles/components.css'
+import daysjs, { Dayjs } from 'dayjs';
+
+
+const darkThemeCalendar = createTheme({
+    palette: {
+        mode: 'dark',
+        primary: {
+            main: '#90caf9',
+        },
+        secondary: {
+            main: '#f48fb1',
+        },
+        text: {
+            primary: "#ffffff"
+        }
+    },
+    typography: {
+        allVariants: {
+            color: '#ffffff', // Ensure all text defaults to white
+        },
+    },
+});
+
 export default function CalendarPad({}) {
     
     let activeAcc1;
     let activeAcc2;
     let activeAcc3;
-    const [value, setValue] = useState(null);
+    const [value, setValue] = useState<Dayjs | null>(null);
     const padStyle = {backgroundColor: '#333'}
+    
     return (
         <div style={padStyle} className='schedulingDockFrame'>
-            <p>Hello</p>
-            {/* <div>
-                //* Calendar widget 
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <StaticDateTimePicker
-                        orientation="landscape"
-                        value={value}
-                        onChange={(newValue) => setValue(newValue)}
-                        renderInput={(params) => <TextField {...params} />}
-                    />
-                </LocalizationProvider>
-            </div>
 
+             <div>
+                <ThemeProvider theme={darkThemeCalendar}>
+                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                        <StaticDatePicker
+                            displayStaticWrapperAs="desktop"
+                            value={value}
+                            onChange={(newValue) => setValue(newValue)} // Updates value correctly
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    label="Select Date"
+                                />
+                            )}
+                        />
+                    </LocalizationProvider>
+                </ThemeProvider>
+            </div>
+{/*
             <div>
                 <div>
                     <img src={activeAcc1.profPic}/>

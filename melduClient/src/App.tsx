@@ -27,7 +27,8 @@ const childr = [
   {path: 'education', element: <Education/>},
   {path: 'settings', element: <Settings/>},
   {path: 'profile/:username', element: <Account/>},
-  {path: 'notifications', element: <Notifications/>}
+  {path: 'notifications', element: <Notifications/>},
+  {path: 'chat', element: <Chat/>}
 ]
 
 const router = createBrowserRouter([
@@ -50,7 +51,6 @@ const router = createBrowserRouter([
   { path: '/login', element: <Login/> },
   { path: '/register', element: <Register/> },
   { path: '/', element: <TypeSelection/> },
-  { path: '/chat/:type', element: <Chat/>},
   { path: '*', element: <ErrorPage/>}
 ])
 
