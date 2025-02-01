@@ -18,6 +18,7 @@ import Education from './main_pages/Education'
 import Settings from './sub_pages/Settings'
 import Account from './main_pages/Account'
 import Notifications from './main_pages/Notifications'
+import AdditionalRegisterInfo from './sub_pages/AdditionalRegistreInfo'
 
 const childr = [
   {path: 'home', element: <HomePage/>},
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
   },
   { path: '/login', element: <Login/> },
   { path: '/register', element: <Register/> },
+  { path: '/register/addinfo', element: <AdditionalRegisterInfo/> },
   { path: '/', element: <TypeSelection/> },
   { path: '*', element: <ErrorPage/>}
 ])

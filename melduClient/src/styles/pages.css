@@ -13,13 +13,6 @@
     overflow: hidden;
 }
 
-.loginOperationFrame {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5vh
-}
 
 .loginInputFields {
     display: flex;
@@ -53,7 +46,7 @@
     overflow: hidden;
 }
 
-.registerOperationFrame {
+.authOperationFrame {
     flex: 1;
     display: flex;
     flex-direction: column;

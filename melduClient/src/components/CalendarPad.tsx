@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import { StaticDatePicker } from '@mui/x-date-pickers';
 import '../styles/components.css'
-import daysjs, { Dayjs } from 'dayjs';
+import { Dayjs } from 'dayjs';
 
 
 const darkThemeCalendar = createTheme({

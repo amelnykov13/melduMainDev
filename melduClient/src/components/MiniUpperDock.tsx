@@ -1,11 +1,20 @@
 import SearchBar from "./SearchBar"
 import '../styles/components.css'
+import { Typography } from "@mui/material"
 export default function MiniUpperDock() {
     return (
         <div className="miniUpperDockFrame">
             <div className="upperDockButtons">
-                <a>Settings</a>
-                <a>Help</a>
+                <a>
+                    <Typography>
+                        Settings
+                    </Typography>
+                </a>
+                <a>
+                    <Typography>
+                        Help
+                    </Typography>
+                </a>
             </div>
 
             <div className="searchBarUpperDock">

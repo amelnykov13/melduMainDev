@@ -1,9 +1,10 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+import { v4 as uuidv4 } from 'uuid';
 
 import {
     TutorSchema,
     StudentSchema
-} from './accTypesModels'
+} from './accTypesModels.js'
 
 
 mongoose.connect('mongodb://localhost:27017/melduDB')
@@ -17,9 +18,10 @@ mongoose.connect('mongodb://localhost:27017/melduDB')
 
 const AccountSchema = new mongoose.Schema({
     id: {
+        type: String,
         required: true,
         unique: true,
-        type: String,
+        default: uuidv4,
     },
     username: {
         type: String,
@@ -58,7 +60,7 @@ const AccountSchema = new mongoose.Schema({
         type: [String],
         required: true,
         validate: {
-            validator: (v) => v.length > 0, // Ensure at least one language is provided
+            validator: (v:string[]) => v.length > 0, // Ensure at least one language is provided
             message: 'At least one language must be specified.',
         },
     },
@@ -84,4 +86,7 @@ const AccountSchema = new mongoose.Schema({
     },
 }, { timestamps: true }); // Automatically adds createdAt and updatedAt fields
 
-const accounts = mongoose.model('Accounts', AccountSchema)
+const Account = mongoose.model('Accounts', AccountSchema);
+
+export default Account;
+

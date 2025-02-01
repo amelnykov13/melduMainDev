@@ -1,7 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-   
-const EducationSchema = new mongoose.Schema({
+export const EducationSchema = new mongoose.Schema({
     id: { type: String },
     schoolName: { type: String },
     degree: {
@@ -30,14 +29,14 @@ const EducationSchema = new mongoose.Schema({
     },
 });
 
-const TestSchema = new mongoose.Schema({
+export const TestSchema = new mongoose.Schema({
     id: { type: String },
     testName: { type: String },
     totalScore: { type: Number },
     testDate: { type: String },
 });
 
-const CertificationSchema = new mongoose.Schema({
+export const CertificationSchema = new mongoose.Schema({
     certificationName: { type: String },
     organization: { type: String },
     issuedDate: { type: String },
@@ -46,19 +45,19 @@ const CertificationSchema = new mongoose.Schema({
     photo: { type: String },
 });
 
-const SkillSchema = new mongoose.Schema({
+export const SkillSchema = new mongoose.Schema({
     id: { type: String },
     skillName: { type: String },
     description: { type: String },
 });
 
-const InterestSchema = new mongoose.Schema({
+export const InterestSchema = new mongoose.Schema({
     id: { type: String },
     interestName: { type: String },
     description: { type: String },
 });
 
-const ExperienceSchema = new mongoose.Schema({
+export const ExperienceSchema = new mongoose.Schema({
     id: { type: String },
     title: { type: String },
     companyName: { type: String },
@@ -70,7 +69,7 @@ const ExperienceSchema = new mongoose.Schema({
     active: { type: Boolean },
 });
 
-const ServiceSchema = new mongoose.Schema({
+export const ServiceSchema = new mongoose.Schema({
     id: { type: String },
     serviceTitle: { type: String },
     hourlyRate: { type: Number },
@@ -78,13 +77,3 @@ const ServiceSchema = new mongoose.Schema({
     description: { type: String },
 });
 
-// Export the schemas
-module.exports = {
-    EducationSchema,
-    TestSchema,
-    CertificationSchema,
-    SkillSchema,
-    InterestSchema,
-    ExperienceSchema,
-    ServiceSchema,
-};

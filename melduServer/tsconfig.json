@@ -1,7 +1,10 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "module": "CommonJS",
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
         "outDir": "./dist/server",
         "baseUrl": "./",
         "esModuleInterop": true,

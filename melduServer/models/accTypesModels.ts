@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 import {
     EducationSchema,
@@ -8,9 +8,9 @@ import {
     InterestSchema,
     ExperienceSchema,
     ServiceSchema,
-} from './subSchemas';
+} from './subSchemas.js';
 
-const StudentSchema = new mongoose.Schema({
+export const StudentSchema = new mongoose.Schema({
     about: {
         type: String,
         required: true,
@@ -36,7 +36,7 @@ const StudentSchema = new mongoose.Schema({
 
 })
 
-const TutorSchema = new mongoose.Schema({
+export const TutorSchema = new mongoose.Schema({
     about: {
         type: String,
         required: true,
@@ -71,7 +71,3 @@ const TutorSchema = new mongoose.Schema({
 
 })
 
-module.exports = {
-    StudentSchema,
-    TutorSchema
-}

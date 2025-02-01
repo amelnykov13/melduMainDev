@@ -1,9 +1,9 @@
 .dockpadFrame {
-    position: fixed;
+    /* position: fixed;
     top: 0;
-    left: 0;
+    left: 0; */
     height: 100%;
-    width: 5.5%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,7 +44,7 @@
     padding: 1vh;
     padding-left: 2vw;
     border-bottom: 1px solid #000;
-    margin-left: 5%;
+    margin-left: 4%;
     z-index: 998;
     background-color: white;
 }
@@ -64,24 +64,20 @@
 }
 
 .schedulingDockFrame {
-    position: fixed;
+    /* position: fixed;
     right: 0;
-    top: 0;
+    top: 0; */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #333;
     height: 100%;
-    width: 21%;
+    width: 100%;
     z-index: 999;
 }
 
 
-.mainContent {
-    margin-left: 8%; /* Match the width of the left dock */
-    margin-right: 21%; /* Match the width of the right dock */
-    padding-top: 5vh; /* Add space for the top dock (e.g., 10vh) */
-}
+
 
 .infoBlockFrame {
     flex: 1;

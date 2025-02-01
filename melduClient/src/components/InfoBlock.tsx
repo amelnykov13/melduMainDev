@@ -1,6 +1,7 @@
 
 import Logo from "./Logo"
 import '../styles/components.css'
+import { Typography } from "@mui/material";
 
 interface InfoBlockProps {
     color: string;
@@ -13,7 +14,7 @@ export default function InfoBlock({color, text}: InfoBlockProps) {
         <div className="infoBlockFrame" style={{backgroundColor: color}}>
             <div className="infoBlockInfoFrame">
                 <Logo width="7vw" height="13vh"/>
-                <p style={{color: 'black'}}>{text}</p>
+                <Typography style={{color: 'black'}}>{text}</Typography>
             </div>
         </div>
     )
