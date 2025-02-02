@@ -18,20 +18,20 @@ export const StudentSchema = new mongoose.Schema({
         maxlength: 400,
     },
 
-    picture: {},
+    picture: { type: String },
 
     education: {
-        educationData: [EducationSchema],
+        type: [{ type: EducationSchema }],
         required: true
     },
     
     interests: {
-        interestsData: [InterestSchema],
+        type: [{ type: InterestSchema }],
         required: true,
     },
     
     testScore: {
-        testsData: [TestSchema],
+        type: [{ type: TestSchema }],
     },
 
 })
@@ -44,29 +44,29 @@ export const TutorSchema = new mongoose.Schema({
         maxlength: 250,
     },
 
-    picture: {},
+    picture: { type: String },
     
     education: {
-        educationData: [EducationSchema],
+        type: [{ type: EducationSchema }],
         required: true,
     },
     
     experience: {
-        experienceData: [ExperienceSchema],
+        type: [{ type: ExperienceSchema }],
         required: true,
     },
 
     skills: {
-        skillsData: [SkillSchema],
+        type: [{ type: SkillSchema}],
         required: true,
     },
 
     services: {
-        servicesData: [ServiceSchema],
+        type: [{ type: ServiceSchema}],
     },
 
     certificaiton: {
-        certificaitonsData: [CertificationSchema],
+        type: [{ type: CertificationSchema}],
     },
 
 })

@@ -1,10 +1,32 @@
-import SearchBar from "./SearchBar"
+import { useState } from "react"
 import '../styles/components.css'
-import { Typography } from "@mui/material"
+import { Box, FormControl, TextField, Typography, Container, Button } from "@mui/material"
 export default function MiniUpperDock() {
+    const [query, setQuery] = useState("");
+
+    const handleSearch = async (event: React.FormEvent) => {
+        event.preventDefault();
+        try {
+            const response = await fetch(`http://localhost:5050/api/s/search?query=${query}`);
+            const data = await response.json();
+            console.log(data.message);
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
     return (
-        <div className="miniUpperDockFrame">
-            <div className="upperDockButtons">
+        <Container maxWidth="lg" sx={{position: 'fixed', top: 0, display: 'flex', flexDirection: 'row',
+            bgcolor: "white",
+            zIndex: 998,
+            padding: '1vh',
+            paddingLeft: '2vw',
+            marginLeft: "4%",
+            borderBottom: '1px solid black',
+            justifyContent: 'space-between',
+            alignContent: 'center'
+        }}>
+            <Box sx={{display: 'flex', gap: 2, alignItems: 'center'}}>
                 <a>
                     <Typography>
                         Settings
@@ -15,12 +37,23 @@ export default function MiniUpperDock() {
                         Help
                     </Typography>
                 </a>
-            </div>
+            </Box>
+        
+            <Box>
+                <form onSubmit={handleSearch}>
+                    <FormControl>
+                            <TextField variant='outlined'
+                                type='search'
+                                label="Search"
+                                size="small"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                sx={{ width: '15vw'}}/>
+                    </FormControl>
+                </form>
+            </Box>
 
-            <div className="searchBarUpperDock">
-                <SearchBar text="Search"/>
-            </div>
+        </Container>
 
-        </div>
     )
 }

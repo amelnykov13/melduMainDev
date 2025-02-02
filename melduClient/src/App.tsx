@@ -62,7 +62,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchMSG = async () => {
       try {
-          const response = await axios.get('http://localhost:5050/');
+          const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}`);
           setMessage(response.data.message);
           console.log(message)
         } catch (err) {

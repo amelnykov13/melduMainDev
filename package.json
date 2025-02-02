@@ -6,16 +6,14 @@
         "install-all": "npm install --prefix melduClient && npm install --prefix melduServer",
         "dev": "concurrently \"npm run dev --prefix melduClient\" \"npm run dev --prefix melduServer\"",
         "start": "concurrently \"npm start --prefix melduClient\" \"npm start --prefix melduServer\"",
-        
-        
         "devClient": "npm run dev --prefix melduClient",
         "devServer": "npm run dev --prefix melduServer",
-        
         "client": "npm start --prefix client",
         "server": "npm start --prefix server",
         "build": "npm run build --prefix melduClient && npm run build --prefix melduServer"
     },
-    "devDependencies": {   
-        "concurrently": "^8.0.1"
+    "devDependencies": {
+        "concurrently": "^8.0.1",
+        "ts-node": "^10.9.2"
     }
 }

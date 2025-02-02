@@ -23,7 +23,7 @@ export const login = async (req: Request, res: Response, next: NextFunction): Pr
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "5d"})
         
         res.status(201).json({ token, user });
-
+        res.redirect('/home') //!Fix the type to redirect to
     } catch(err) {
         next(err);
     }
@@ -49,7 +49,7 @@ export const register = async (req: Request, res: Response, next: NextFunction):
         await newUser.save();
 
         res.status(201).json({message: "Account has been created"});
-
+        res.redirect('/home'); //! Fix to add the type
     } catch(err) {
         next(err);
     }
@@ -59,6 +59,7 @@ export const logout = async (req: Request, res: Response, next: NextFunction): P
     try {
         res.clearCookie("token", { httpOnly: true, secure: true, sameSite: "strict" });
         res.status(200).json({ message: "Succesful logout" });
+        res.redirect('/login')
         return;
     } catch(err) {
         next(err);
