@@ -1,4 +1,4 @@
-import { FormControl, Input, InputAdornment, IconButton, Visually } from "@mui/material";
+import { FormControl, Input, InputAdornment, IconButton } from "@mui/material";
 import { useParams } from "react-router-dom"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ImageIcon from '@mui/icons-material/Image';
@@ -12,11 +12,11 @@ export default function Chat() {
     return (
         <>
 
-            <div className="chatPage">
-                <div className="chatContent">
+            <div className="chat">
+                <div className="chat__content">
 
                 </div>
-                <FormControl className="chatInputBox">
+                <FormControl className="chat__input">
                     <Input sx={{ width: '40vw', borderRadius: '15px', border: '1px solid #000'}} disableUnderline
                     startAdornment= {
                         <InputAdornment position="start">

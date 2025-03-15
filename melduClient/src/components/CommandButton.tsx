@@ -19,7 +19,7 @@ export default function CommandButton({icon, disabled = false}: CommandButtonPro
                 color: "gray",
             },
 
-        }} className="cmdButtonFrame">
+        }} className="commandButton">
             {icon}
         </IconButton>
     )

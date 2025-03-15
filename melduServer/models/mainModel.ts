@@ -76,13 +76,18 @@ const AccountSchema = new mongoose.Schema({
         minlength: 3, // Minimum 3 characters
         maxlength: 100, // Maximum 100 characters
     },
+    initialType: {
+        type: String,
+        required: true,
+        enum: ["student", "tutor"]
+    },
     studentProfile: {
-        default: null,
         type: StudentSchema, // Embeds the StudentSchema
+        default: null,
     },
     tutorProfile: {
-        default: null,
         type: TutorSchema, // Embeds the TutorSchema
+        default: null,
     },
 }, { timestamps: true }); // Automatically adds createdAt and updatedAt fields
 

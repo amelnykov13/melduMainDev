@@ -6,12 +6,13 @@ interface TypeHolderProps {
     img?: string;
     link: string;
     type: "Student" | "Tutor";
+    selected: boolean;
 }
 
-export default function TypeHolder({img, link, type}: TypeHolderProps){
+export default function TypeHolder({img, link, type, selected}: TypeHolderProps){
     return (
         <div style={{display: 'flex', flexDirection: 'column', alignItems: "center"}}>
-            <div className='typeHolder'>
+            <div className={selected ? "type--activated" : 'type'}>
                 <Link to={link}>
                     <img src={profimg}/>    
                 </Link>

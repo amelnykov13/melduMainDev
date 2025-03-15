@@ -4,12 +4,14 @@ import { Box, FormControl, TextField, Typography, Container, Button } from "@mui
 export default function MiniUpperDock() {
     const [query, setQuery] = useState("");
 
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
     const handleSearch = async (event: React.FormEvent) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:5050/api/s/search?query=${query}`);
+            const response = await fetch(`${SERVER_URL}/s/search?query=${query}`);
             const data = await response.json();
-            console.log(data.message);
+            console.log(data);
         } catch(err) {
             console.error(err);
         }

@@ -20,7 +20,7 @@ const __filename = fileURLToPath(import.meta.url); //get the current file's URL
 const __dirname = dirname(__filename); // Get directory to the current file
 
 const corsOptions = {
-    origin: process.env.CLIENT_URL,
+    origin: process.env.NODE_ENV === "development" ? "http://localhost:3000" : process.env.CLIENT_URL,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowHeaders: ['Content-Type', 'Authorization'],
 };
@@ -28,23 +28,34 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(morgan('tiny'));
 app.use(cookieParser());
 
-
-const clientBuildPath = path.join(__dirname, '../melduClient/dist');
-if (fs.existsSync(clientBuildPath)) {
-    app.use(express.static(clientBuildPath));
+if (process.env.NODE_ENV === "development") {
+    app.use(morgan('dev'));
+} else {
+    app.use(morgan('tiny'));
 }
+
+//Serve Fronted in production
+if (process.env.NODE_ENV === "production") {
+    const clientBuildPath = path.join(__dirname, '../melduClient/dist');
+    if (fs.existsSync(clientBuildPath)) {
+        app.use(express.static(clientBuildPath));
+        
+        app.get('*', (req: Request, res: Response) => {
+            res.sendFile(path.join(clientBuildPath, "index.html"));
+        });
+    }
+}
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
-
 app.use('/api/s', studentRoutes);
 app.use('/api/t', tutorRoutes);
 
 app.get('/api', (req: Request, res: Response) => {
-    res.json({message: 'Hello guys'})
+    res.json({message: 'Server connection established'})
 })
 
 app.use((err:any, req: Request, res: Response, next: Function) => {

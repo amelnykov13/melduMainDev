@@ -1,5 +1,5 @@
 import { private_createTypography } from "@mui/material";
-export default function Profile() {
+export default function OtherAccount() {
     return (
         <>
             <div>

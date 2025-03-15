@@ -37,7 +37,7 @@ export default function CalendarPad({}) {
     const padStyle = {backgroundColor: '#333'}
     
     return (
-        <div style={padStyle} className='schedulingDockFrame'>
+        <div style={padStyle} className='schedulingDockpad'>
 
              <div>
                 <ThemeProvider theme={darkThemeCalendar}>

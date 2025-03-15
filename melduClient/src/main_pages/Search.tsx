@@ -1,6 +1,10 @@
 import { useParams } from "react-router-dom"
 import { useState } from "react";
-import { Box, Button, Container, FormControl, Stack, TextField } from "@mui/material";
+import { Box, Button, Container, FormControl, Stack, TextField, Divider } from "@mui/material";
+
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
+
 export default function Search() {
     const params = useParams();
     let searchArgs = params.searchArgs;
@@ -10,7 +14,8 @@ export default function Search() {
         const handleSearch = async (event: React.FormEvent) => {
             event.preventDefault();
             try {
-                const response = await fetch(`http://localhost:5050/api/search?query=${query}`);
+                //TODO: add acc type fetch to make search either tutor or student type
+                const response = await fetch(`${SERVER_URL}/search?query=${query}`);
                 const data = await response.json();
                 console.log(data);
             } catch(err) {
@@ -20,37 +25,53 @@ export default function Search() {
 
     return (
         <Container>
-            <Box display="flex" gap="2vw" flexDirection="row">
+            <Box display="flex" gap="1vw" flexDirection="row">
                 <form onSubmit={handleSearch}>
-                    <FormControl className="seachBarUpperDock">
-                        {/* <div className="searchBarUpperDock"> */}
+                    <FormControl className="searchbar">
                             <TextField variant='outlined'
                                 type='search'
                                 label="Search"
                                 size="small"
                                 value={query}
-                                sx={{ width: '40vw'}}
+                                sx={{ width: '40vw' }}
                                 onChange={(e) => setQuery(e.target.value)}/>
-                        {/* </div> */}
                     </FormControl>
                 </form>
                 <Stack direction="row" spacing={1}>
-                    <Button size="small" variant="outlined">country</Button>
-                    <Button size="small" variant="outlined">languages</Button>
-                    <Button size="small" variant="outlined">filter</Button>
-                    <Button size="small" variant="outlined">all filters</Button>
+                    <Button size="small" variant="outlined" className="searchType__btn">country</Button>
+                    <Button size="small" variant="outlined" className="searchType__btn">languages</Button>
+                    <Button size="small" variant="outlined" className="searchType__btn">filter</Button>
+                    <Divider orientation="vertical" flexItem sx={{borderWidth: '0.5px', borderColor: 'black'}}/>
+                    <Button size="small" variant="outlined" className="searchType__btn">all filters</Button>
                 </Stack>
             </Box>
 
             {searchArgs && 
-            <div>
-                <div>
-                    
-                    
-                </div>
-            </div>
+            <Stack direction="column">
+                
+            </Stack>
             }
             
+            <div>
+                <img/>
+                <div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    
+                    <div>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+
         </Container>
     )
 }

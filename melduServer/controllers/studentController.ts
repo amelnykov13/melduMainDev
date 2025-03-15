@@ -47,9 +47,23 @@ export const getEducationInfoStudent = async (req: Request, res: Response, next:
 export const searchStudent = async (req: Request, res: Response, next: NextFunction):Promise<void> => {
     try {
         const { query } = req.query;
-        res.status(200).json({message: query})
+
+        if(!query || typeof query !== 'string') {
+            res.status(400).json({ message: "Invalid Search Query" });
+            return;
+        }
+        const foundAcc = await Account.find({ username: { $regex: query, $options: 'i' } });
+
+        if (foundAcc.length === 0) {
+            res.status(404).json({ message: "No accounts were found" });
+            return;
+        }
+
+        res.status(200).json({ message: foundAcc })
     } catch(err) {
-        next(err);
+        //next(err);
+        console.log(err);
+        res.status(500).json({ message: "Internal error" });
     }
 }
 

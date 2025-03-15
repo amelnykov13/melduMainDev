@@ -11,8 +11,8 @@ interface InfoBlockProps {
 export default function InfoBlock({color, text}: InfoBlockProps) {
 
     return (
-        <div className="infoBlockFrame" style={{backgroundColor: color}}>
-            <div className="infoBlockInfoFrame">
+        <div className="infoBlock" style={{backgroundColor: color}}>
+            <div className="infoBlock__information">
                 <Logo width="7vw" height="13vh"/>
                 <Typography style={{color: 'black'}}>{text}</Typography>
             </div>

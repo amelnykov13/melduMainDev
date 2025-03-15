@@ -1,4 +1,4 @@
-.loginFrame {
+.login {
     width: 50%;
     height: 70%;
     border-radius: 10px;
@@ -14,24 +14,7 @@
 }
 
 
-.loginInputFields {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.operationButtons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vh;
-    justify-content: center;
-}
-
-
-.registerFrame {
+.register {
     width: 50%;
     height: 70%;
     border-radius: 10px;
@@ -46,7 +29,7 @@
     overflow: hidden;
 }
 
-.authOperationFrame {
+.auth {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -54,7 +37,7 @@
     gap: 4vh
 }
 
-.registerInputFields {
+.auth__input {
     display: flex;
     flex-direction: column;
     gap: 1vh;
@@ -62,18 +45,33 @@
     align-items: center;
 }
 
-.recTypeHolder {
-    width: 55vw;
-    height: 15vh;
+/* * Home Page */
+
+.recommendation {
     display: flex;
-    padding: 31px 98px 32px 98px;
     justify-content: center;
     align-items: center;
     align-self: stretch;
     border: 1px solid #000;
 }
 
-.recTypeHolderLabel {
+.recommendation__elm {
+    display: flex;
+    flex-direction: column;
+    gap: 0vh;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 1vh 1vw;
+}
+
+.recommendation__elm__img {
+    border: 1px solid #000;
+    width: 7.5vw;
+    height: 11vh;
+}
+
+.recommendation__label {
     font-size: 1.5rem;
     color: #000;
     font-family: Inter;
@@ -82,9 +80,10 @@
     line-height: normal;
 }
 
+
 /* Type Selection Page */
 
-.typeSelectionBack {
+.typeSelection {
     position: fixed;
     top: 0;
     left: 0;
@@ -95,7 +94,7 @@
     flex-direction: column;
 }
 
-.selectionButtons {
+.typeSelection__btn {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -104,7 +103,7 @@
     gap: 3vw;
 }
 
-.typeSelectionExtButton {
+.typeSelection__btn--exit {
     flex-grow: 0.5;
     display: flex;
     flex-direction: column;
@@ -113,9 +112,9 @@
     padding: 5vh 0;
 }
 
-/* Notifications Page */
+/* * Notifications Page */
 
-.notifCategoriesHolder {
+.notifficationCategories {
     border-radius: 20px;
     border: 1px solid #000;
     height: 4vh;
@@ -128,13 +127,12 @@
     margin-left: 4vw;
 }
 
-.notificationsHolder {
-    border-radius: 11px;
+.notifications {
+    border-radius: 10px;
     border: 1px solid #000;
     padding: 0.5vh 0.5vw;
     display: flex;
     flex-direction: column;
-    width: 61vw;
     height: 90vh;
     margin-left: 4vw;
     margin-top: 2vh;
@@ -142,36 +140,35 @@
 
 /* Education Page */
 
-.lessonsHolder {
+.lessons {
     border: 1px solid #000;
     height: 90vh;
-    width: 60vw;
-    margin-left: 4vw;
+    padding: 3vh 2vw;
 }
 
 /* Chat Page */
 
-.chatPage {
+.chat {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 85vh;
 }
 
-.chatContent {
+.chat_content {
     display: flex;
     flex-grow: 1;
 }
 
-.chatInputBox {
+.chat__input {
     flex-grow: 1;
     display: flex;
     justify-content: end;
 }
 
-/* My Account Page */
+/* * My Account Page */
 
-.mainAccountFrame {
+.accountInfo {
     border-radius: 10px;
     border: 1px solid #000;
     background: #FFF;
@@ -179,4 +176,22 @@
     flex-direction: column;
     width: 40vw;
     height: 20vh;
+}
+
+.additionalAccountInfo {
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    background: #FFF;
+
+}
+
+/* * Search Page */
+
+.searchType__btn {
+    border: 1.5px solid #000 !important;
+    border-radius: 15px !important;
+    color: black !important;
 }

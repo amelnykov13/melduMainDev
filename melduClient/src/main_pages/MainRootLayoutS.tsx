@@ -10,6 +10,7 @@ export default function MainRootLayoutS(){
     const location = useLocation();
     const path = location.pathname;
 
+    // ! Temporal mode fetching
     let newpath = path;
     if (path.startsWith('/s/')) {
         newpath = path.slice(3)
@@ -34,7 +35,7 @@ export default function MainRootLayoutS(){
                     zIndex: 1,
                     marginLeft: "8%",
                     marginRight: "21%",
-                    paddingTop: "5vh",
+                    pt: "5vh",
                 }}>
                 
                     <Outlet/>

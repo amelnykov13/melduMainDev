@@ -7,16 +7,16 @@ import { Link } from "react-router-dom"
 export default function Login() {
     return (
         <div>
-            <div className="loginFrame">
+            <div className="login">
                 <div>
                     <InfoBlock color='#6BEBCB' text='Welcome Back'/>    
                 </div>
 
-                <div className="authOperationFrame">
+                <div className="auth">
                         <Typography style={{marginLeft: "4vw", fontFamily: 'Inter', fontStyle: 'normal', fontSize: '1.6rem'}}>Log in</Typography>
 
 
-                        <FormControl className="registerInputFields">
+                        <FormControl className="auth__input">
                             <Stack direction="column" spacing={6}>
                                 <Stack direction="column" spacing={2}>
                                     <TextField required hiddenLabel label="Username" size="small" name="username" type="username" sx={{

@@ -22,12 +22,12 @@ export default function DockPad({ color, disabledBtn, mode }: DockPadProps) {
     } 
 
     return (
-        <div className='dockpadFrame' style={dockStyle}>
-            <div className='logoHolder'>
+        <div className='dockpad' style={dockStyle}>
+            <div className='logo'>
                 <Logo width='4.5vw' height='8vh'/>
             </div>
 
-            <div className='commandButtonContainer'>
+            <div className='commandButtons'>
                 <Link to={mode === 's' ? '/s/home' : '/t/home'}>
                     <CommandButton disabled={disabledBtn === "home"} icon={<HomeIcon style={{fontSize: '4vh'}}/>} />
                 </Link>
@@ -56,7 +56,7 @@ export default function DockPad({ color, disabledBtn, mode }: DockPadProps) {
                     <CommandButton disabled={disabledBtn === 'education'} icon={<SchoolIcon style={{fontSize: '4vh'}}/>} />
                 </Link>
 
-                <Link to={mode === 's' ? '/s/myprofile' : '/t/myprofile'}>
+                <Link to={mode === 's' ? '/s/account' : '/t/account'}>
                     <CommandButton disabled={disabledBtn === 'myprofile'} icon={<PersonIcon style={{fontSize: '4vh'}}/>} />
                 </Link>
                 <Link to="/">

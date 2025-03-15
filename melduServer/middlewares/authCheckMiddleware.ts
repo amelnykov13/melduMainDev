@@ -5,6 +5,10 @@ interface AuthRequest extends Request {
     user?: any;
 }
 
+interface TypeRequest extends Request {
+    type?: any;
+}
+
 export const verifyToken = (req:AuthRequest, res:Response, next:NextFunction) => {
     const token = req.header("Authorization");
     if (!token) {
@@ -18,4 +22,8 @@ export const verifyToken = (req:AuthRequest, res:Response, next:NextFunction) =>
     } catch(err) {
         res.status(403).json({message: "Invalid Token"});
     }
+}
+
+export const verifyType = async (req:TypeRequest, res: Response, next: NextFunction):Promise<void> => {
+
 }

@@ -23,7 +23,7 @@ export const login = async (req: Request, res: Response, next: NextFunction): Pr
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: "5d"})
         
         res.status(201).json({ token, user });
-        res.redirect('/home') //!Fix the type to redirect to
+        res.redirect('/'); 
     } catch(err) {
         next(err);
     }
@@ -31,7 +31,7 @@ export const login = async (req: Request, res: Response, next: NextFunction): Pr
 
 export const register = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-        const { fullname, username, email, password } = req.body;
+        const { fullname, username, email, password, initialType } = req.body;
         const userUsername = await Account.findOne({ username });
         const userEmail = await Account.findOne({ email });
 
@@ -45,13 +45,23 @@ export const register = async (req: Request, res: Response, next: NextFunction):
             return;
         }
 
-        const newUser = new Account({ fullname, username, email, password });
+        
+        
+        const newUser = new Account({ fullname, username, email, password, initialType });
         await newUser.save();
 
         res.status(201).json({message: "Account has been created"});
         res.redirect('/home'); //! Fix to add the type
     } catch(err) {
         next(err);
+    }
+}
+
+export const register2nd = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+
+    } catch(err) {
+
     }
 }
 

@@ -7,19 +7,19 @@ import TypeHolder from "../components/TypeHolder"
 export default function TypeSelection() {
 
     return (
-        <div className="typeSelectionBack">
-            <div className="selectionButtons">
+        <div className="typeSelection">
+            <div className="typeSelection__btn">
                 <div>
-                    <TypeHolder link="/s" type="Student"/>
+                    <TypeHolder link="/s" type="Student" selected={true}/>
                 </div>
 
                 <div>
-                    <TypeHolder link="/t" type="Tutor"/>
+                    <TypeHolder link="/t" type="Tutor" selected={false}/>
                 </div>
             </div>
 
             <Link to="/login">
-                <div className="typeSelectionExtButton">
+                <div className="typeSelection__btn--exit">
                     <IconButton sx={{
                     backgroundColor: "grey",
                     borderRadius: "25%",
